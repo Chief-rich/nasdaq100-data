@@ -1,0 +1,17 @@
+{
+  "ticker": "^NDX",
+  "source_name": "Yahoo Finance",
+  "source_url": "https://finance.yahoo.com/quote/%5ENDX/history/",
+  "start_date": "2019-01-01",
+  "last_updated_utc": "2026-07-21T18:16:25Z",
+  "row_count": 1897,
+  "fields": [
+    "Date",
+    "Open",
+    "Close",
+    "High",
+    "Low",
+    "Volume",
+    "Adj Close"
+  ]
+}
