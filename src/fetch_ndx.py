@@ -48,6 +48,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "data"
 HISTORY_CSV = DATA_DIR / "history.csv"
 HISTORY_JSON = DATA_DIR / "history.json"
+RECENT_JSON = DATA_DIR / "recent_30d.json"
+RECENT_DAYS = 30
 LATEST_JSON = DATA_DIR / "latest.json"
 META_JSON = DATA_DIR / "meta.json"
 
@@ -209,12 +211,8 @@ def write_latest(df: pd.DataFrame, now_utc: str) -> None:
     log.info("Wrote %s (last_trading_date=%s)", LATEST_JSON.relative_to(REPO_ROOT), payload["last_trading_date"])
 
 
-def write_history_json(df: pd.DataFrame, now_utc: str) -> None:
-    """Full history as a self-describing JSON — the AI-friendly format.
-
-    Wraps the data with ticker/source/fields metadata so a model reading this
-    file alone knows exactly what it is, then lists one object per trading day.
-    """
+def _records(df: pd.DataFrame) -> list[dict]:
+    """Turn a DataFrame into a list of one dict per trading day (AI-friendly)."""
     price_cols = [c for c in ("Open", "Close", "High", "Low", "Adj Close") if c in df.columns]
     records = []
     for _, row in df.iterrows():
@@ -227,19 +225,39 @@ def write_history_json(df: pd.DataFrame, now_utc: str) -> None:
             except (TypeError, ValueError):
                 rec["Volume"] = None
         records.append(rec)
+    return records
 
+
+def _write_json_window(path: Path, df: pd.DataFrame, now_utc: str, extra: dict | None = None) -> None:
+    """Write a self-describing JSON: ticker/source/fields metadata + data array."""
     payload = {
         "ticker": TICKER,
         "source": SOURCE_NAME,
         "source_url": SOURCE_URL,
-        "start_date": START_DATE,
         "last_updated_utc": now_utc,
         "row_count": int(len(df)),
         "fields": list(df.columns),
-        "data": records,
     }
-    HISTORY_JSON.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    log.info("Wrote %s (%d records)", HISTORY_JSON.relative_to(REPO_ROOT), len(records))
+    if extra:
+        payload.update(extra)
+    payload["data"] = _records(df)
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    log.info("Wrote %s (%d records)", path.relative_to(REPO_ROOT), payload["row_count"])
+
+
+def write_history_json(df: pd.DataFrame, now_utc: str) -> None:
+    """Full history as a self-describing JSON — the AI-friendly format."""
+    _write_json_window(HISTORY_JSON, df, now_utc, extra={"start_date": START_DATE})
+
+
+def write_recent_json(df: pd.DataFrame, now_utc: str) -> None:
+    """Last RECENT_DAYS trading days — a small, token-cheap window for AI tools."""
+    window = df.tail(RECENT_DAYS)
+    extra = {
+        "window": f"last {RECENT_DAYS} trading days",
+        "date_range": [str(window["Date"].iloc[0]), str(window["Date"].iloc[-1])],
+    }
+    _write_json_window(RECENT_JSON, window, now_utc, extra=extra)
 
 
 def write_meta(df: pd.DataFrame, now_utc: str) -> None:
@@ -277,6 +295,7 @@ def main() -> int:
         now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         write_history(df)
         write_history_json(df, now_utc)
+        write_recent_json(df, now_utc)
         write_latest(df, now_utc)
         write_meta(df, now_utc)
 
