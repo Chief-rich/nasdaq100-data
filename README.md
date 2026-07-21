@@ -75,6 +75,31 @@ python src/fetch_ndx.py
 - 首次執行時若 `data/` 資料夾或 `history.csv` 不存在，程式會自動建立。
 - 若下載失敗、資料為空、缺欄位或驗證不通過，程式會 **非 0 結束**，不會默默產出壞檔案。
 
+## 查詢特定日期的 Open / Close
+
+`src/query_dates.py` 可以從 `data/history.csv` 撈出指定日期的開盤／收盤價。若某天剛好休市（週末、美國假日），它會**自動往前抓最近一個交易日**，並標示是否為精確命中，不會回傳空值。
+
+```bash
+# 用內建的 10 個範例日期
+python src/query_dates.py
+
+# 查自己的日期（YYYY-MM-DD，可帶任意數量，用空白分隔）
+python src/query_dates.py 2020-03-16 2021-11-22 2024-07-04
+```
+
+輸出範例：
+
+```
+Requested    Trading day  Exact?          Open        Close
+-----------------------------------------------------------
+2020-03-16   2020-03-16   yes         7,502.26     7,020.38
+2021-11-22   2021-11-22   yes        16,644.77    16,380.98
+2024-07-04   2024-07-03   no         19,995.28    20,186.63   # 7/4 美國國慶休市，自動抓前一交易日
+```
+
+- 每次執行也會把結果另存成 `data/query_result.json`，方便程式或 AI 讀取。
+- `Exact?` 欄為 `no` 時，代表當天休市，實際採用的是 `Trading day` 欄顯示的前一個交易日。
+
 ## GitHub Actions 自動更新
 
 Workflow 定義於 `.github/workflows/update.yml`：
@@ -127,7 +152,9 @@ ndx-daily-data/
 │  ├─ history.csv
 │  ├─ latest.json
 │  └─ meta.json
-├─ src/fetch_ndx.py               # 主程式：抓取 → 整理 → 驗證 → 寫檔
+├─ src/
+│  ├─ fetch_ndx.py                # 主程式：抓取 → 整理 → 驗證 → 寫檔
+│  └─ query_dates.py             # 查詢工具：撈指定日期的 Open/Close
 ├─ requirements.txt
 ├─ README.md
 └─ .gitignore
