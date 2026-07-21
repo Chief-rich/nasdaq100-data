@@ -130,10 +130,15 @@ Workflow 定義於 `.github/workflows/update.yml`：
 
 ## 給 AI / 程式讀取資料的建議
 
+- **給 AI 讀整份歷史（最推薦）** → 讀 `data/history.json`。它是**自描述格式**：外層帶 `ticker` / `source` / `fields`，內層 `data` 是每個交易日一筆物件，模型只讀這一個檔就知道「這是 ^NDX、來源 Yahoo、有哪些欄位」。最適合 Claude Code、Cowork、OpenAI file-search 等工具。
 - **只想要最新一天** → 讀 `data/latest.json`（欄位固定，最好解析）。
 - **想知道資料來源、範圍、欄位** → 讀 `data/meta.json`。
-- **要做分析 / 回測** → 讀 `data/history.csv`（`Date` 為 `YYYY-MM-DD`，已排序去重）。
-- 若接 OpenAI Responses API 的 file search 或類似 RAG 系統，直接上傳 `history.csv` + `latest.json` + `meta.json` 三個檔案即可，`meta.json` 能讓模型清楚知道 ticker 是 `^NDX` 而非 QQQ。
+- **要做分析 / 回測** → 讀 `data/history.csv`（`Date` 為 `YYYY-MM-DD`，已排序去重，保留完整精度）。
+- 若接 OpenAI Responses API 的 file search 或類似 RAG 系統，直接上傳 `history.json`（或 `history.csv`）+ `meta.json` 即可。
+
+> **給 AI 工具的連結請用 raw 純文字版**（不是 `/blob/` 網頁版）：
+> - 完整 JSON：`https://raw.githubusercontent.com/Chief-rich/ndx-daily-data/main/data/history.json`
+> - 完整 CSV：`https://raw.githubusercontent.com/Chief-rich/ndx-daily-data/main/data/history.csv`
 
 ## 後續可擴充（TODO / 第二階段）
 
