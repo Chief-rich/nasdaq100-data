@@ -2,7 +2,7 @@
   "ticker": "^NDX",
   "source": "Yahoo Finance",
   "source_url": "https://finance.yahoo.com/quote/%5ENDX/history/",
-  "last_updated_utc": "2026-07-21T20:09:23Z",
+  "last_updated_utc": "2026-07-22T12:49:53Z",
   "row_count": 30,
   "fields": [
     "Date",
@@ -287,7 +287,7 @@
       "High": 29192.29,
       "Low": 28891.07,
       "Adj Close": 29155.18,
-      "Volume": 1193843000
+      "Volume": 8001540000
     }
   ]
 }
