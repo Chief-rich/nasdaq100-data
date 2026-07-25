@@ -4,7 +4,7 @@
   "description": "Nasdaq-100 market data (index ^NDX and E-mini futures NQ=F), daily and 1-minute, from Yahoo Finance.",
   "source": "Yahoo Finance",
   "raw_base": "https://raw.githubusercontent.com/Chief-rich/nasdaq100-data/main/",
-  "generated_utc": "2026-07-25T17:32:45Z",
+  "generated_utc": "2026-07-25T17:52:49Z",
   "note": "Daily data covers 2019-01-01 onward. 1-minute data is limited by Yahoo to the last ~30 days and is accumulated over time, so its history grows from the first run onward and cannot be backfilled to 2019.",
   "datasets": [
     {
@@ -20,7 +20,7 @@
         "2019-01-02",
         "2026-07-24"
       ],
-      "last_updated_utc": "2026-07-25T17:32:11Z",
+      "last_updated_utc": "2026-07-25T17:52:43Z",
       "files": {
         "history.csv": "data/ndx_daily/history.csv",
         "history.json": "data/ndx_daily/history.json",
@@ -42,7 +42,7 @@
         "2019-01-02",
         "2026-07-24"
       ],
-      "last_updated_utc": "2026-07-25T17:32:11Z",
+      "last_updated_utc": "2026-07-25T17:52:43Z",
       "files": {
         "history.csv": "data/nq_daily/history.csv",
         "history.json": "data/nq_daily/history.json",
@@ -59,12 +59,12 @@
       "description": "1-minute bars, US regular session, accumulated",
       "path": "data/ndx_1m/",
       "raw_history_csv": "https://raw.githubusercontent.com/Chief-rich/nasdaq100-data/main/data/ndx_1m/history.csv",
-      "row_count": 6238,
+      "row_count": 6239,
       "date_range": [
         "2026-07-02T09:30:00-04:00",
         "2026-07-24T15:59:00-04:00"
       ],
-      "last_updated_utc": "2026-07-25T17:32:13Z",
+      "last_updated_utc": "2026-07-25T17:52:45Z",
       "files": {
         "history.csv": "data/ndx_1m/history.csv",
         "latest.json": "data/ndx_1m/latest.json",
@@ -79,12 +79,12 @@
       "description": "1-minute bars, near-24h, accumulated",
       "path": "data/nq_1m/",
       "raw_history_csv": "https://raw.githubusercontent.com/Chief-rich/nasdaq100-data/main/data/nq_1m/history.csv",
-      "row_count": 21882,
+      "row_count": 21890,
       "date_range": [
         "2026-07-02T00:09:00-04:00",
         "2026-07-24T16:59:00-04:00"
       ],
-      "last_updated_utc": "2026-07-25T17:32:13Z",
+      "last_updated_utc": "2026-07-25T17:52:45Z",
       "files": {
         "history.csv": "data/nq_1m/history.csv",
         "latest.json": "data/nq_1m/latest.json",
