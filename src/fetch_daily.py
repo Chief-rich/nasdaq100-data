@@ -27,7 +27,7 @@ START_DATE = "2019-01-01"
 INSTRUMENTS = [
     {
         "ticker": "^NDX",
-        "outdir": m.DATA_DIR,  # repo root data/ — keeps existing ^NDX file URLs
+        "outdir": m.DATA_DIR / "ndx_daily",
         "source_url": "https://finance.yahoo.com/quote/%5ENDX/history/",
         "note": "Nasdaq-100 index (NOT QQQ, NOT plain NDX)",
     },

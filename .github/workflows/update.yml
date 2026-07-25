@@ -43,6 +43,9 @@ jobs:
         # Non-fatal: a Yahoo hiccup here must not block the daily commit.
         run: python src/fetch_1m.py || echo "1m step reported an error (continuing)"
 
+      - name: Build dataset manifest
+        run: python src/build_manifest.py
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"

@@ -16,5 +16,8 @@ Thumbs.db
 /reports/
 /NQmain.jpg
 
+# Ad-hoc manual query output (regenerated on demand by query_dates.py)
+data/query_result.json
+
 # NOTE: data/ is intentionally NOT ignored — the CSV/JSON outputs are the
 # whole point of this repo and must be committed.

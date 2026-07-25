@@ -20,7 +20,7 @@ from pathlib import Path
 import pandas as pd
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-HISTORY_CSV = REPO_ROOT / "data" / "history.csv"
+HISTORY_CSV = REPO_ROOT / "data" / "ndx_daily" / "history.csv"
 
 # A random spread of 10 dates across different years.
 SAMPLE_DATES = [

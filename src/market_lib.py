@@ -245,9 +245,24 @@ def accumulate_1m(path: Path, new_df: pd.DataFrame) -> pd.DataFrame:
 
 def write_1m_outputs(df: pd.DataFrame, outdir: Path, ticker: str,
                      source_url: str, session: str, now_utc: str) -> None:
-    """Write the accumulating history.csv plus a small meta.json (no giant JSON)."""
+    """Write the accumulating history.csv, a latest.json bar, and meta.json.
+
+    No giant history.json here — a years-long 1m file would be huge; the CSV is
+    the store and meta.json/latest.json give AI tools a cheap way in.
+    """
     outdir.mkdir(parents=True, exist_ok=True)
     df.to_csv(outdir / "history.csv", index=False, encoding="utf-8")
+
+    last = df.iloc[-1]
+    _dump(outdir / "latest.json", {
+        "ticker": ticker, "source": SOURCE_NAME, "interval": "1m",
+        "datetime": str(last["Datetime"]),
+        "open": _to_float(last["Open"]), "high": _to_float(last.get("High")),
+        "low": _to_float(last.get("Low")), "close": _to_float(last["Close"]),
+        "volume": int(last["Volume"]) if "Volume" in df.columns and pd.notna(last["Volume"]) else None,
+        "updated_at_utc": now_utc,
+    })
+
     _dump(outdir / "meta.json", {
         "ticker": ticker, "source_name": SOURCE_NAME, "source_url": source_url,
         "interval": "1m", "session": session,

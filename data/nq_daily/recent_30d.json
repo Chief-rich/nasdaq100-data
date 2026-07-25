@@ -2,7 +2,7 @@
   "ticker": "NQ=F",
   "source": "Yahoo Finance",
   "source_url": "https://finance.yahoo.com/quote/NQ%3DF/history/",
-  "last_updated_utc": "2026-07-25T16:09:02Z",
+  "last_updated_utc": "2026-07-25T17:32:11Z",
   "row_count": 30,
   "fields": [
     "Date",
