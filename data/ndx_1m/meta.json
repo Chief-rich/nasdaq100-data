@@ -1,0 +1,22 @@
+{
+  "ticker": "^NDX",
+  "source_name": "Yahoo Finance",
+  "source_url": "https://finance.yahoo.com/quote/%5ENDX/history/",
+  "interval": "1m",
+  "session": "US regular session (09:30-16:00 ET)",
+  "last_updated_utc": "2026-07-25T15:58:14Z",
+  "row_count": 6238,
+  "date_range": [
+    "2026-07-02T09:30:00-04:00",
+    "2026-07-24T15:59:00-04:00"
+  ],
+  "fields": [
+    "Datetime",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume"
+  ],
+  "note": "Yahoo only serves the last ~30 days of 1m data; this file is accumulated over time by re-running fetch_1m.py, so its history grows beyond Yahoo's 30-day window from the first run onward."
+}

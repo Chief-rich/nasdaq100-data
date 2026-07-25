@@ -1,4 +1,4 @@
-name: Update ^NDX daily data
+name: Update NDX/NQ data (daily + 1m)
 
 # Runs on a schedule AND on-demand. Do NOT split follow-up work into a second
 # workflow triggered by this push: pushes made with GITHUB_TOKEN do not trigger
@@ -35,17 +35,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Fetch ^NDX data
-        run: python src/fetch_ndx.py
+      - name: Fetch daily data (^NDX + NQ=F, 2019->today)
+        run: python src/fetch_daily.py
+
+      - name: Accumulate 1-minute bars (^NDX + NQ=F)
+        # Yahoo only serves ~30 days of 1m; this appends to a growing store.
+        # Non-fatal: a Yahoo hiccup here must not block the daily commit.
+        run: python src/fetch_1m.py || echo "1m step reported an error (continuing)"
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/history.csv data/history.json data/recent_30d.json data/latest.json data/meta.json
+          git add data/
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore: update ^NDX daily data"
+            git commit -m "chore: update NDX/NQ daily + 1m data"
             git push
           fi

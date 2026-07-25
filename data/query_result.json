@@ -1,26 +1,42 @@
 [
   {
-    "requested_date": "2020-03-16",
-    "used_trading_date": "2020-03-16",
+    "requested_date": "2019-08-05",
+    "used_trading_date": "2019-08-05",
     "is_exact": true,
-    "open": 7502.26,
-    "close": 7020.38,
+    "open": 7510.02,
+    "close": 7415.69,
     "found": true
   },
   {
-    "requested_date": "2021-11-22",
-    "used_trading_date": "2021-11-22",
+    "requested_date": "2020-09-03",
+    "used_trading_date": "2020-09-03",
     "is_exact": true,
-    "open": 16644.77,
-    "close": 16380.98,
+    "open": 12195.75,
+    "close": 11771.37,
     "found": true
   },
   {
-    "requested_date": "2024-07-04",
-    "used_trading_date": "2024-07-03",
-    "is_exact": false,
-    "open": 19995.28,
-    "close": 20186.63,
+    "requested_date": "2021-05-12",
+    "used_trading_date": "2021-05-12",
+    "is_exact": true,
+    "open": 13155.07,
+    "close": 13001.63,
+    "found": true
+  },
+  {
+    "requested_date": "2022-10-13",
+    "used_trading_date": "2022-10-13",
+    "is_exact": true,
+    "open": 10481.58,
+    "close": 11033.58,
+    "found": true
+  },
+  {
+    "requested_date": "2024-08-05",
+    "used_trading_date": "2024-08-05",
+    "is_exact": true,
+    "open": 17444.4,
+    "close": 17895.16,
     "found": true
   }
 ]

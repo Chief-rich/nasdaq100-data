@@ -2,7 +2,7 @@
   "ticker": "^NDX",
   "source": "Yahoo Finance",
   "source_url": "https://finance.yahoo.com/quote/%5ENDX/history/",
-  "last_updated_utc": "2026-07-21T20:09:23Z",
+  "last_updated_utc": "2026-07-25T15:56:32Z",
   "row_count": 30,
   "fields": [
     "Date",
@@ -15,37 +15,10 @@
   ],
   "window": "last 30 trading days",
   "date_range": [
-    "2026-06-08",
-    "2026-07-21"
+    "2026-06-11",
+    "2026-07-24"
   ],
   "data": [
-    {
-      "Date": "2026-06-08",
-      "Open": 29482.19,
-      "Close": 29414.26,
-      "High": 29697.9,
-      "Low": 29294.02,
-      "Adj Close": 29414.26,
-      "Volume": 10077650000
-    },
-    {
-      "Date": "2026-06-09",
-      "Open": 29647.35,
-      "Close": 29084.5,
-      "High": 29805.3,
-      "Low": 28196.9,
-      "Adj Close": 29084.5,
-      "Volume": 12106940000
-    },
-    {
-      "Date": "2026-06-10",
-      "Open": 28893.82,
-      "Close": 28508.03,
-      "High": 29212.38,
-      "Low": 28462.92,
-      "Adj Close": 28508.03,
-      "Volume": 9519620000
-    },
     {
       "Date": "2026-06-11",
       "Open": 28731.16,
@@ -287,7 +260,34 @@
       "High": 29192.29,
       "Low": 28891.07,
       "Adj Close": 29155.18,
-      "Volume": 1193843000
+      "Volume": 8001540000
+    },
+    {
+      "Date": "2026-07-22",
+      "Open": 28949.81,
+      "Close": 28998.1,
+      "High": 29176.91,
+      "Low": 28934.52,
+      "Adj Close": 28998.1,
+      "Volume": 7473050000
+    },
+    {
+      "Date": "2026-07-23",
+      "Open": 28545.98,
+      "Close": 28454.81,
+      "High": 28726.62,
+      "Low": 28274.52,
+      "Adj Close": 28454.81,
+      "Volume": 7655810000
+    },
+    {
+      "Date": "2026-07-24",
+      "Open": 28362.15,
+      "Close": 28128.34,
+      "High": 28471.48,
+      "Low": 28053.08,
+      "Adj Close": 28128.34,
+      "Volume": 7266300000
     }
   ]
 }

@@ -12,5 +12,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Local-only / personal artifacts (kept out of the public repo)
+/reports/
+/NQmain.jpg
+
 # NOTE: data/ is intentionally NOT ignored — the CSV/JSON outputs are the
 # whole point of this repo and must be committed.

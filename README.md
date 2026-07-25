@@ -62,18 +62,43 @@
 }
 ```
 
+## 資料集一覽
+
+本專案抓 **兩個標的**（指數 `^NDX` 與 E-mini 期貨 `NQ=F`）、**兩種頻率**（日線、1 分K），全部由 GitHub Actions 每天自動更新：
+
+| 資料集 | 路徑 | 內容 | Raw 連結（給 AI／程式） |
+| --- | --- | --- | --- |
+| **^NDX 日線** | `data/` | 2019→今，OHLCV | `.../main/data/history.csv` |
+| **NQ 日線** | `data/nq_daily/` | 2019→今，OHLCV | `.../main/data/nq_daily/history.csv` |
+| **^NDX 1 分K** | `data/ndx_1m/` | 日盤，逐日累積 | `.../main/data/ndx_1m/history.csv` |
+| **NQ 1 分K** | `data/nq_1m/` | 近 24 小時，逐日累積 | `.../main/data/nq_1m/history.csv` |
+
+> Raw 連結前綴為 `https://raw.githubusercontent.com/Chief-rich/ndx-daily-data/`。
+
+### 關於 1 分K 的重要限制
+Yahoo 的 1m 資料**只保留最近約 30 天**（每次請求最多 ~8 天）。因此 `fetch_1m.py` 每次執行會抓「當下可得的最近 ~30 天」並**去重 append** 進 `history.csv`——**從第一次執行起，這個檔會隨時間累積、超越 Yahoo 的 30 天上限**。換言之，2019 起的深度 1m 歷史 Yahoo 給不了，只能從現在開始往後累積（要補回舊資料需外部付費資料源）。
+
+### 標的差異（回測請注意）
+- `^NDX` 是**指數，不能直接交易**；1m 只有美股日盤（約 390 根/日）。
+- `NQ=F` 是**可交易的 E-mini 那斯達克100 期貨**（每點 US$20）；1m 近 24 小時、含夜盤。
+- 回測交易邏輯應使用**你實際下單的標的**（NQ 期貨或 QQQ），而非指數本身。
+
 ## 本機執行方式
 
 ```bash
 # 1. 安裝相依套件（建議用虛擬環境）
 pip install -r requirements.txt
 
-# 2. 執行
-python src/fetch_ndx.py
+# 2. 抓日線（^NDX + NQ=F，2019→今）
+python src/fetch_daily.py
+
+# 3. 抓／累積 1 分K（^NDX + NQ=F）
+python src/fetch_1m.py
 ```
 
-- 首次執行時若 `data/` 資料夾或 `history.csv` 不存在，程式會自動建立。
-- 若下載失敗、資料為空、缺欄位或驗證不通過，程式會 **非 0 結束**，不會默默產出壞檔案。
+- 首次執行時若對應的資料夾或檔案不存在，程式會自動建立。
+- 日線若下載失敗、資料為空、缺欄位或驗證不通過，程式會 **非 0 結束**，不會默默產出壞檔案。
+- 1m 步驟中單一標的失敗（例如 Yahoo 一時抽風）只會記錄警告、不影響另一個標的。
 
 ## 查詢特定日期的 Open / Close
 
@@ -155,12 +180,16 @@ Workflow 定義於 `.github/workflows/update.yml`：
 ndx-daily-data/
 ├─ .github/workflows/update.yml   # 定時 + 手動觸發的更新 workflow
 ├─ data/                          # 輸出（由腳本產生並自動 commit）
-│  ├─ history.csv
-│  ├─ latest.json
-│  └─ meta.json
+│  ├─ history.csv / .json         # ^NDX 日線（根目錄，維持既有 URL）
+│  ├─ recent_30d.json / latest.json / meta.json
+│  ├─ nq_daily/                   # NQ=F 日線（同一組檔案結構）
+│  ├─ ndx_1m/history.csv          # ^NDX 1 分K（逐日累積）
+│  └─ nq_1m/history.csv           # NQ=F 1 分K（逐日累積）
 ├─ src/
-│  ├─ fetch_ndx.py                # 主程式：抓取 → 整理 → 驗證 → 寫檔
-│  └─ query_dates.py             # 查詢工具：撈指定日期的 Open/Close
+│  ├─ market_lib.py               # 共用邏輯：下載 / 整理 / 驗證 / 寫檔
+│  ├─ fetch_daily.py              # 日線：^NDX + NQ=F（2019→今）
+│  ├─ fetch_1m.py                 # 1 分K：^NDX + NQ=F（累積）
+│  └─ query_dates.py              # 查詢工具：撈指定日期的 Open/Close
 ├─ requirements.txt
 ├─ README.md
 └─ .gitignore
