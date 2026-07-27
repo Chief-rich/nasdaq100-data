@@ -3,8 +3,8 @@
   "source_name": "Yahoo Finance",
   "source_url": "https://finance.yahoo.com/quote/%5ENDX/history/",
   "start_date": "2019-01-01",
-  "last_updated_utc": "2026-07-26T11:47:49Z",
-  "row_count": 1900,
+  "last_updated_utc": "2026-07-27T16:03:42Z",
+  "row_count": 1901,
   "fields": [
     "Date",
     "Open",
