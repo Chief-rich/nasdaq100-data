@@ -1,8 +1,8 @@
 {
   "ticker": "^NDX",
   "source": "Yahoo Finance",
-  "last_trading_date": "2026-08-04",
-  "open": 29109.26,
-  "close": 29733.16,
-  "updated_at_utc": "2026-08-05T13:22:24Z"
+  "last_trading_date": "2026-08-05",
+  "open": 29863.27,
+  "close": 29487.79,
+  "updated_at_utc": "2026-08-06T13:19:25Z"
 }
