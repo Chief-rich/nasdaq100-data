@@ -4,7 +4,7 @@
   "description": "Nasdaq-100 market data (index ^NDX and E-mini futures NQ=F), daily and 1-minute, from Yahoo Finance.",
   "source": "Yahoo Finance",
   "raw_base": "https://raw.githubusercontent.com/Chief-rich/nasdaq100-data/main/",
-  "generated_utc": "2026-08-08T09:21:52Z",
+  "generated_utc": "2026-08-09T09:23:44Z",
   "note": "Daily data covers 2019-01-01 onward. 1-minute data is limited by Yahoo to the last ~30 days and is accumulated over time, so its history grows from the first run onward and cannot be backfilled to 2019.",
   "datasets": [
     {
@@ -20,7 +20,7 @@
         "2019-01-02",
         "2026-08-07"
       ],
-      "last_updated_utc": "2026-08-08T09:21:46Z",
+      "last_updated_utc": "2026-08-09T09:23:40Z",
       "files": {
         "history.csv": "data/ndx_daily/history.csv",
         "history.json": "data/ndx_daily/history.json",
@@ -42,7 +42,7 @@
         "2019-01-02",
         "2026-08-07"
       ],
-      "last_updated_utc": "2026-08-08T09:21:46Z",
+      "last_updated_utc": "2026-08-09T09:23:40Z",
       "files": {
         "history.csv": "data/nq_daily/history.csv",
         "history.json": "data/nq_daily/history.json",
@@ -64,7 +64,7 @@
         "2026-07-02T09:30:00-04:00",
         "2026-08-07T15:59:00-04:00"
       ],
-      "last_updated_utc": "2026-08-08T09:21:48Z",
+      "last_updated_utc": "2026-08-09T09:23:42Z",
       "files": {
         "history.csv": "data/ndx_1m/history.csv",
         "latest.json": "data/ndx_1m/latest.json",
@@ -84,7 +84,7 @@
         "2026-07-02T00:09:00-04:00",
         "2026-08-07T16:59:00-04:00"
       ],
-      "last_updated_utc": "2026-08-08T09:21:48Z",
+      "last_updated_utc": "2026-08-09T09:23:42Z",
       "files": {
         "history.csv": "data/nq_1m/history.csv",
         "latest.json": "data/nq_1m/latest.json",
