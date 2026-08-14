@@ -4,11 +4,11 @@
   "source_url": "https://finance.yahoo.com/quote/%5ENDX/history/",
   "interval": "1m",
   "session": "US regular session (09:30-16:00 ET)",
-  "last_updated_utc": "2026-08-13T10:46:17Z",
-  "row_count": 11309,
+  "last_updated_utc": "2026-08-14T10:39:29Z",
+  "row_count": 11699,
   "date_range": [
     "2026-07-02T09:30:00-04:00",
-    "2026-08-12T15:59:00-04:00"
+    "2026-08-13T15:59:00-04:00"
   ],
   "fields": [
     "Datetime",

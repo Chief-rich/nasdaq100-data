@@ -2,7 +2,7 @@
   "ticker": "NQ=F",
   "source": "Yahoo Finance",
   "source_url": "https://finance.yahoo.com/quote/NQ%3DF/history/",
-  "last_updated_utc": "2026-08-13T10:46:16Z",
+  "last_updated_utc": "2026-08-14T10:39:27Z",
   "row_count": 30,
   "fields": [
     "Date",
@@ -15,19 +15,10 @@
   ],
   "window": "last 30 trading days",
   "date_range": [
-    "2026-07-02",
-    "2026-08-13"
+    "2026-07-06",
+    "2026-08-14"
   ],
   "data": [
-    {
-      "Date": "2026-07-02",
-      "Open": 30089.75,
-      "Close": 29556.0,
-      "High": 30320.0,
-      "Low": 29328.5,
-      "Adj Close": 29556.0,
-      "Volume": 651643
-    },
     {
       "Date": "2026-07-06",
       "Open": 29930.25,
@@ -278,16 +269,25 @@
       "High": 30001.75,
       "Low": 29624.5,
       "Adj Close": 29853.25,
-      "Volume": 454357
+      "Volume": 412530
     },
     {
       "Date": "2026-08-13",
       "Open": 29825.0,
-      "Close": 29870.0,
-      "High": 29924.0,
+      "Close": 30188.5,
+      "High": 30272.75,
       "Low": 29780.5,
-      "Adj Close": 29870.0,
-      "Volume": 53699
+      "Adj Close": 30188.5,
+      "Volume": 412530
+    },
+    {
+      "Date": "2026-08-14",
+      "Open": 30210.75,
+      "Close": 30227.75,
+      "High": 30249.75,
+      "Low": 30124.25,
+      "Adj Close": 30227.75,
+      "Volume": 50026
     }
   ]
 }
