@@ -2,7 +2,7 @@
   "ticker": "^NDX",
   "source": "Yahoo Finance",
   "source_url": "https://finance.yahoo.com/quote/%5ENDX/history/",
-  "last_updated_utc": "2026-08-27T18:17:37Z",
+  "last_updated_utc": "2026-08-28T19:26:43Z",
   "row_count": 30,
   "fields": [
     "Date",
@@ -15,19 +15,10 @@
   ],
   "window": "last 30 trading days",
   "date_range": [
-    "2026-07-17",
-    "2026-08-27"
+    "2026-07-20",
+    "2026-08-28"
   ],
   "data": [
-    {
-      "Date": "2026-07-17",
-      "Open": 28457.33,
-      "Close": 28592.66,
-      "High": 28867.4,
-      "Low": 28231.32,
-      "Adj Close": 28592.66,
-      "Volume": 7820470000
-    },
     {
       "Date": "2026-07-20",
       "Open": 28871.16,
@@ -283,11 +274,20 @@
     {
       "Date": "2026-08-27",
       "Open": 29480.99,
-      "Close": 29506.88,
-      "High": 29610.62,
+      "Close": 29641.56,
+      "High": 29643.53,
       "Low": 29366.42,
-      "Adj Close": 29506.88,
-      "Volume": 815804246
+      "Adj Close": 29641.56,
+      "Volume": 7448410000
+    },
+    {
+      "Date": "2026-08-28",
+      "Open": 29545.9,
+      "Close": 29435.21,
+      "High": 29752.78,
+      "Low": 29383.92,
+      "Adj Close": 29435.21,
+      "Volume": 837440257
     }
   ]
 }
