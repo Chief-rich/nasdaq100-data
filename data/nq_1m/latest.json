@@ -3,10 +3,10 @@
   "source": "Yahoo Finance",
   "interval": "1m",
   "datetime": "2026-08-28T16:59:00-04:00",
-  "open": 29510.25,
+  "open": 29509.5,
   "high": 29515.5,
   "low": 29491.75,
   "close": 29491.75,
-  "volume": 166,
-  "updated_at_utc": "2026-08-29T13:10:25Z"
+  "volume": 572237,
+  "updated_at_utc": "2026-08-30T12:54:30Z"
 }
