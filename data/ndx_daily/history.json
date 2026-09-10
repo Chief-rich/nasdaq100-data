@@ -3,8 +3,8 @@
   "source": "Yahoo Finance",
   "source_url": "https://finance.yahoo.com/quote/%5ENDX/history/",
   "start_date": "2019-01-01",
-  "last_updated_utc": "2026-09-09T12:20:28Z",
-  "row_count": 1931,
+  "last_updated_utc": "2026-09-10T12:13:56Z",
+  "row_count": 1932,
   "fields": [
     "Date",
     "Open",
@@ -17393,6 +17393,15 @@
       "Low": 29400.7,
       "Adj Close": 29507.7,
       "Volume": 7714560000
+    },
+    {
+      "Date": "2026-09-09",
+      "Open": 29431.94,
+      "Close": 29421.55,
+      "High": 29563.6,
+      "Low": 29334.4,
+      "Adj Close": 29421.55,
+      "Volume": 7379700000
     }
   ]
 }

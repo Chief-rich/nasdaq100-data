@@ -1,8 +1,8 @@
 {
   "ticker": "NQ=F",
   "source": "Yahoo Finance",
-  "last_trading_date": "2026-09-09",
-  "open": 29526.5,
-  "close": 29365.5,
-  "updated_at_utc": "2026-09-09T12:20:28Z"
+  "last_trading_date": "2026-09-10",
+  "open": 29458.5,
+  "close": 29252.5,
+  "updated_at_utc": "2026-09-10T12:13:56Z"
 }
