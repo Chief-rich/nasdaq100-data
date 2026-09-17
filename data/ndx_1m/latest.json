@@ -2,11 +2,11 @@
   "ticker": "^NDX",
   "source": "Yahoo Finance",
   "interval": "1m",
-  "datetime": "2026-09-15T15:59:00-04:00",
-  "open": 28930.96,
-  "high": 28937.75,
-  "low": 28926.92,
-  "close": 28937.75,
-  "volume": 6041683,
-  "updated_at_utc": "2026-09-16T12:36:22Z"
+  "datetime": "2026-09-16T15:59:00-04:00",
+  "open": 28925.76,
+  "high": 28953.02,
+  "low": 28925.76,
+  "close": 28953.02,
+  "volume": 5274031,
+  "updated_at_utc": "2026-09-17T12:36:05Z"
 }
