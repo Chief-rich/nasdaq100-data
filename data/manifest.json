@@ -4,7 +4,7 @@
   "description": "Nasdaq-100 market data (index ^NDX and E-mini futures NQ=F), daily and 1-minute, from Yahoo Finance.",
   "source": "Yahoo Finance",
   "raw_base": "https://raw.githubusercontent.com/Chief-rich/nasdaq100-data/main/",
-  "generated_utc": "2026-09-24T12:44:10Z",
+  "generated_utc": "2026-09-25T12:46:48Z",
   "note": "Daily data covers 2019-01-01 onward. 1-minute data is limited by Yahoo to the last ~30 days and is accumulated over time, so its history grows from the first run onward and cannot be backfilled to 2019.",
   "datasets": [
     {
@@ -15,12 +15,12 @@
       "description": "Daily OHLC, 2019-01-01 onward",
       "path": "data/ndx_daily/",
       "raw_history_csv": "https://raw.githubusercontent.com/Chief-rich/nasdaq100-data/main/data/ndx_daily/history.csv",
-      "row_count": 1941,
+      "row_count": 1943,
       "date_range": [
         "2019-01-02",
-        "2026-09-23"
+        "2026-09-24"
       ],
-      "last_updated_utc": "2026-09-24T12:44:04Z",
+      "last_updated_utc": "2026-09-25T12:46:42Z",
       "files": {
         "history.csv": "data/ndx_daily/history.csv",
         "history.json": "data/ndx_daily/history.json",
@@ -37,12 +37,12 @@
       "description": "Daily OHLC, 2019-01-01 onward",
       "path": "data/nq_daily/",
       "raw_history_csv": "https://raw.githubusercontent.com/Chief-rich/nasdaq100-data/main/data/nq_daily/history.csv",
-      "row_count": 1946,
+      "row_count": 1947,
       "date_range": [
         "2019-01-02",
-        "2026-09-24"
+        "2026-09-25"
       ],
-      "last_updated_utc": "2026-09-24T12:44:04Z",
+      "last_updated_utc": "2026-09-25T12:46:42Z",
       "files": {
         "history.csv": "data/nq_daily/history.csv",
         "history.json": "data/nq_daily/history.json",
@@ -59,12 +59,12 @@
       "description": "1-minute bars, US regular session, accumulated",
       "path": "data/ndx_1m/",
       "raw_history_csv": "https://raw.githubusercontent.com/Chief-rich/nasdaq100-data/main/data/ndx_1m/history.csv",
-      "row_count": 22618,
+      "row_count": 23008,
       "date_range": [
         "2026-07-02T09:30:00-04:00",
-        "2026-09-23T15:59:00-04:00"
+        "2026-09-24T15:59:00-04:00"
       ],
-      "last_updated_utc": "2026-09-24T12:44:06Z",
+      "last_updated_utc": "2026-09-25T12:46:44Z",
       "files": {
         "history.csv": "data/ndx_1m/history.csv",
         "latest.json": "data/ndx_1m/latest.json",
@@ -79,12 +79,12 @@
       "description": "1-minute bars, near-24h, accumulated",
       "path": "data/nq_1m/",
       "raw_history_csv": "https://raw.githubusercontent.com/Chief-rich/nasdaq100-data/main/data/nq_1m/history.csv",
-      "row_count": 79911,
+      "row_count": 81283,
       "date_range": [
         "2026-07-02T00:09:00-04:00",
-        "2026-09-24T08:34:00-04:00"
+        "2026-09-25T08:36:00-04:00"
       ],
-      "last_updated_utc": "2026-09-24T12:44:06Z",
+      "last_updated_utc": "2026-09-25T12:46:44Z",
       "files": {
         "history.csv": "data/nq_1m/history.csv",
         "latest.json": "data/nq_1m/latest.json",
