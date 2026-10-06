@@ -4,11 +4,11 @@
   "source_url": "https://finance.yahoo.com/quote/NQ%3DF/history/",
   "interval": "1m",
   "session": "CME near-24h (globus/overnight included)",
-  "last_updated_utc": "2026-10-05T16:01:11Z",
-  "row_count": 89697,
+  "last_updated_utc": "2026-10-06T14:12:09Z",
+  "row_count": 90958,
   "date_range": [
     "2026-07-02T00:09:00-04:00",
-    "2026-10-05T11:51:00-04:00"
+    "2026-10-06T10:02:00-04:00"
   ],
   "fields": [
     "Datetime",
