@@ -3,8 +3,8 @@
   "source_name": "Yahoo Finance",
   "source_url": "https://finance.yahoo.com/quote/NQ%3DF/history/",
   "start_date": "2019-01-01",
-  "last_updated_utc": "2026-10-15T12:39:34Z",
-  "row_count": 1961,
+  "last_updated_utc": "2026-10-16T12:25:47Z",
+  "row_count": 1962,
   "fields": [
     "Date",
     "Open",
