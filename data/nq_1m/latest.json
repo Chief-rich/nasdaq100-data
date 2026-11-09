@@ -2,11 +2,11 @@
   "ticker": "NQ=F",
   "source": "Yahoo Finance",
   "interval": "1m",
-  "datetime": "2026-11-06T16:59:00-05:00",
-  "open": 27104.0,
-  "high": 27113.5,
-  "low": 27085.25,
-  "close": 27085.25,
-  "volume": 199,
-  "updated_at_utc": "2026-11-08T14:17:54Z"
+  "datetime": "2026-11-09T12:19:00-05:00",
+  "open": 27967.75,
+  "high": 27972.25,
+  "low": 27964.5,
+  "close": 27966.5,
+  "volume": 0,
+  "updated_at_utc": "2026-11-09T17:29:56Z"
 }
