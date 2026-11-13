@@ -3,8 +3,8 @@
   "source": "Yahoo Finance",
   "source_url": "https://finance.yahoo.com/quote/NQ%3DF/history/",
   "start_date": "2019-01-01",
-  "last_updated_utc": "2026-11-12T15:58:43Z",
-  "row_count": 1981,
+  "last_updated_utc": "2026-11-13T15:24:12Z",
+  "row_count": 1982,
   "fields": [
     "Date",
     "Open",
@@ -17833,16 +17833,25 @@
       "High": 28697.0,
       "Low": 27847.75,
       "Adj Close": 28473.25,
-      "Volume": 691280
+      "Volume": 653920
     },
     {
       "Date": "2026-11-12",
       "Open": 28306.25,
-      "Close": 28339.25,
-      "High": 28398.0,
+      "Close": 28384.5,
+      "High": 28652.25,
       "Low": 28013.75,
-      "Adj Close": 28339.25,
-      "Volume": 382962
+      "Adj Close": 28384.5,
+      "Volume": 653920
+    },
+    {
+      "Date": "2026-11-13",
+      "Open": 28399.25,
+      "Close": 27844.25,
+      "High": 28607.75,
+      "Low": 27824.5,
+      "Adj Close": 27844.25,
+      "Volume": 334730
     }
   ]
 }
