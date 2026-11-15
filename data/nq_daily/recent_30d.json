@@ -2,7 +2,7 @@
   "ticker": "NQ=F",
   "source": "Yahoo Finance",
   "source_url": "https://finance.yahoo.com/quote/NQ%3DF/history/",
-  "last_updated_utc": "2026-11-14T14:09:23Z",
+  "last_updated_utc": "2026-11-15T14:45:32Z",
   "row_count": 30,
   "fields": [
     "Date",
@@ -287,7 +287,7 @@
       "High": 28607.75,
       "Low": 27695.25,
       "Adj Close": 28034.75,
-      "Volume": 718471
+      "Volume": 803962
     }
   ]
 }
